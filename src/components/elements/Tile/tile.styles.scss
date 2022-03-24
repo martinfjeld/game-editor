@@ -1,0 +1,14 @@
+@import "../../../_utils/_styles.scss";
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $highlights;
+  }
+}
