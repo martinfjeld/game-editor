@@ -1,6 +1,3 @@
-import { IRoom } from "./room.interface";
+import { IDefaults } from "./defaults.interface";
 
-export interface IGameObject {
-  gameFunctions: { [key: string]: Function };
-  currentRoom: IRoom;
-}
+export interface IGameObject extends IDefaults {}

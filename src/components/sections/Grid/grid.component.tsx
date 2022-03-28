@@ -9,7 +9,11 @@ import "./grid.styles.scss";
  * @currentRoom Properties of the current room
  * @returns A grid made from the corresponding room in maps.json
  */
-export const Grid: React.FC<IGrid> = ({ currentRoom, gameSettings }) => {
+export const Grid: React.FC<IGrid> = ({
+  currentRoom = gameUtils.emptyRoom,
+  gameSettings,
+  gameFunctions,
+}) => {
   // Calculate how many tiles there is in the room and make an array out of it to loop through later
   let tiles = new Array(+currentRoom.grid.x * +currentRoom.grid.y).fill(0);
 
@@ -27,8 +31,6 @@ export const Grid: React.FC<IGrid> = ({ currentRoom, gameSettings }) => {
     setCoords(myArray);
   }, [currentRoom.grid.x, currentRoom.grid.y]);
 
-  console.log(coords);
-
   return (
     <div
       className="grid"
@@ -40,7 +42,15 @@ export const Grid: React.FC<IGrid> = ({ currentRoom, gameSettings }) => {
     >
       {tiles.map((map: any, i: number) => {
         // Looping through the tiles array
-        return <Tile key={i} coords={coords[i]} gameSettings={gameSettings} />;
+        return (
+          <Tile
+            key={i}
+            coords={coords[i]}
+            gameSettings={gameSettings}
+            currentRoom={currentRoom}
+            gameFunctions={gameFunctions}
+          />
+        );
       })}
     </div>
   );

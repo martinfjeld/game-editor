@@ -4,6 +4,7 @@ import { IGameEditor } from "../../interfaces/game-editor.interface";
 import data from "../../maps.json";
 import { IRoom } from "../../interfaces/room.interface";
 import { Grid } from "../sections/Grid/grid.component";
+import { ObjectProperties } from "../sections/ObjectProperties/object-properties.component";
 
 /**
  *
@@ -17,7 +18,10 @@ export const GameEditor: React.FC<IGameEditor> = () => {
   const [updatedRooms, setUpdatedRooms] = useState<Array<IRoom>>(rooms);
 
   // The room that is currently selected
-  const [currentRoom, setCurrentRoom] = useState<IRoom>(updatedRooms[0]);
+  const [currentRoom, setCurrentRoom] = useState<IRoom>(updatedRooms[2]);
+
+  //
+  const [activeCoord, setActiveCoord] = useState<string>("");
 
   // Name of the room that is currently selected
   const [activeRoom, setActiveRoom] = useState<string>(currentRoom.name);
@@ -27,7 +31,7 @@ export const GameEditor: React.FC<IGameEditor> = () => {
     grid: {
       opacity: 1,
       display: true,
-      showCoords: false,
+      showCoords: true,
     },
 
     darkMode: false,
@@ -53,6 +57,7 @@ export const GameEditor: React.FC<IGameEditor> = () => {
       setActiveRoom(name);
     },
 
+    // Updates the current room
     updateCurrentRoom: (key: string, value: any) => {
       updatedRooms.map((key) => {
         if (key.name === activeRoom) {
@@ -63,10 +68,10 @@ export const GameEditor: React.FC<IGameEditor> = () => {
       // })
     },
 
+    // Updates the rooms with the new properties of the changed room.
     updateRooms: () => {
       updatedRooms.map((room) => {
         if (room.name === activeRoom) {
-          console.log(room);
         }
         return null;
       });
@@ -74,11 +79,21 @@ export const GameEditor: React.FC<IGameEditor> = () => {
 
       // });
     },
+
+    setCoords: (coord: string) => {
+      setActiveCoord(coord);
+      console.log(coord);
+    },
   };
 
   return (
     <div className="game-editor">
-      <Grid currentRoom={currentRoom} gameSettings={gameSettings} />
+      <Grid
+        currentRoom={currentRoom}
+        gameSettings={gameSettings}
+        gameFunctions={gameFunctions}
+      />
+      <ObjectProperties />
     </div>
   );
 };

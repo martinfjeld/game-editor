@@ -1,5 +1,6 @@
 {
   "name": "game_editor",
+  "description": "An editor for making maps for games",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

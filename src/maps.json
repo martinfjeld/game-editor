@@ -8,8 +8,14 @@
     "sprite": "../../images/maps/DemoLower.png",
     "gameObjects": {
       "hero": {
-        "x": "36",
-        "y": "36",
+        "x": "3",
+        "y": "5",
+        "sprite": "hellowmaor",
+        "isPerson": "true"
+      },
+      "hero2": {
+        "x": "6",
+        "y": "7",
         "sprite": "hellowmaor"
       }
     },
@@ -137,7 +143,7 @@
     }
   },
   {
-    "name": "Market",
+    "name": "Kitchen",
     "grid": {
       "x": "12",
       "y": "14"
@@ -146,8 +152,14 @@
 
     "gameObjects": {
       "hero": {
-        "x": "32",
-        "y": "12",
+        "x": "2",
+        "y": "5",
+        "sprite": "hellowmaor"
+      },
+      "hero2": {
+        "x": "4",
+        "y": "7",
+        "isPerson": "true",
         "sprite": "hellowmaor"
       }
     },
@@ -204,8 +216,8 @@
 
     "gameObjects": {
       "hero": {
-        "x": "32",
-        "y": "12",
+        "x": "12",
+        "y": "22",
         "sprite": "hellowmaor"
       }
     },

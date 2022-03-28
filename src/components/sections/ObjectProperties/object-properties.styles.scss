@@ -1,0 +1,30 @@
+@import "../../../_utils/styles";
+
+.object-properties {
+  &_wrapper {
+    padding: 2rem;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_module {
+    background-color: white;
+    border: 3px solid black;
+    height: 50vh;
+    width: 50%;
+
+    .module-title {
+      font-weight: 200;
+      font-size: 4rem;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

@@ -10,17 +10,5 @@ export const GameObject: React.FC<IGameObject> = ({
   currentRoom,
   gameFunctions,
 }) => {
-  const changeRoom = () => {
-    if (currentRoom.name === "Market") {
-      gameFunctions.updateCurrentRoom();
-    } else {
-      gameFunctions.updateActiveRoom("Market");
-    }
-  };
-  return (
-    <div className="game-object" onClick={changeRoom}>
-      {currentRoom.name}
-      <h1>{JSON.stringify(currentRoom.grid)}</h1>
-    </div>
-  );
+  return <div className="game-object"></div>;
 };

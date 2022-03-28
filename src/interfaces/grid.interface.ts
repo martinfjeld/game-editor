@@ -1,7 +1,3 @@
-import { NumberLiteralType } from "typescript";
-import { IRoom } from "./room.interface";
+import { IDefaults } from "./defaults.interface";
 
-export interface IGrid {
-  currentRoom: IRoom;
-  gameSettings: Object;
-}
+export interface IGrid extends IDefaults {}

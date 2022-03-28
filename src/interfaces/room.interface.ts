@@ -5,14 +5,6 @@ export interface IRoom {
     y: string;
   };
   sprite: string;
-  gameObjects: {
-    [character: string]: {
-      x: string;
-      y: string;
-      sprite: string;
-    };
-  };
-  walls: {
-    [coord: string]: any;
-  };
+  gameObjects?: any;
+  walls: any;
 }
